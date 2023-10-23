@@ -1,0 +1,27 @@
+/*1.JAVA >> C. Check if the input is pangram or not. (Pangram is a sentence that contains all the alphabet from a-z)*/
+
+import java.util.*;
+ 
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the sentence ");
+        String oishee = sc.nextLine();
+         HashSet<Character> o = new HashSet<Character>();
+        char chs[]= oishee.toCharArray();
+        for (char oishee_ch : chs) {
+           
+            if (oishee_ch >= 'a' && oishee_ch <= 'z')
+                o.add(oishee_ch);
+            if (oishee_ch >= 'A' && oishee_ch <= 'Z') {
+                oishee_ch = Character.toLowerCase(oishee_ch);
+                o.add(oishee_ch);
+            }
+        }
+        if (o.size() == 26)
+            System.out.println("It is a Pangram");
+        else
+            System.out.println("It is Not a Pangram");
+    }
+}
