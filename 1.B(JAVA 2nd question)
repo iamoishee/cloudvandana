@@ -1,0 +1,31 @@
+//1.JAVA >> B. Enter a Roman Number as input and convert it to an integer. (ex IX = 9)
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Roman Number ");
+        String oishee = sc.nextLine();
+        HashMap<Character, Integer> oishee_rv = new HashMap<Character, Integer>();
+        oishee_rv.put('I', 1);
+        oishee_rv.put('V', 5);
+        oishee_rv.put('X', 10);
+        oishee_rv.put('L', 50);
+        oishee_rv.put('C', 100);
+        oishee_rv.put('D', 500);
+        oishee_rv.put('M', 1000);
+
+        int oishee_res= 0, oishee_prev=0;
+        
+        for (int i = oishee.length() - 1; i >= 0; i--) {
+            int oishee_cur = oishee_rv.get(oishee.charAt(i));
+            if (oishee_cur < oishee_prev) {
+                oishee_res -= oishee_cur;
+            } else {
+                oishee_res += oishee_cur;
+            }
+            oishee_prev = oishee_cur;
+        }
+        System.out.println("Equivalent Integer value = " + oishee_res);
+    }
+}
