@@ -1,0 +1,16 @@
+/*2 JavaScript
+A. Take a sentence as an input and reverse every word in that sentence.
+a. Example - This is a sunny day > shiT si a ynnus yad.*/
+
+function fun_revwords(oishee_str) {   
+    let each = oishee_str.split(" ");
+    for (let i=0;i<each.length;i++) {
+        each[i] = each[i].split("").reverse().join("");
+    }
+    let s = each.join(" ");
+    return s;
+}
+//main 
+let OISHEE = prompt("Enter the sentence:");
+let oishee_revSnt = fun_revwords(OISHEE);
+console.log(oishee_revSnt);
